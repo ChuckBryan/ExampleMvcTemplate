@@ -1,0 +1,28 @@
+﻿
+@using ExampleMvcTemplate.Models
+@model Int32?
+
+@{
+    // Get From Database
+    var displayItems = new List<DropDownItem>()
+    {
+        new DropDownItem{Value = "1", Text = "Disposition 1"},
+        new DropDownItem{Value = "2", Text = "Disposition 2"},
+        new DropDownItem{Value = "3", Text = "Disposition 3"},
+        new DropDownItem{Value = "4", Text = "Disposition 4"},
+        new DropDownItem{Value = "5", Text = "Disposition 5"},
+        new DropDownItem{Value = "6", Text = "Disposition 6"},
+    };
+
+    // Create List Items
+    var listItems = displayItems.Select(m => new SelectListItem()
+    {
+        Text = m.Text,
+        Value = m.Value,
+        Selected = m.Value == Model.ToString()
+    });
+
+
+}
+
+@Html.DropDownList("", listItems, "-- Select Disposition --", new { @class = "form-control input-sm" })

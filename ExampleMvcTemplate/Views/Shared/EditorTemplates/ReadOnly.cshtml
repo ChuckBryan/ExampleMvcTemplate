@@ -1,0 +1,13 @@
+﻿@model dynamic
+
+@if (@ViewData.ModelMetadata.ModelType == typeof(DateTime) || @ViewData.ModelMetadata.ModelType == typeof(DateTime?))
+{
+    <input name="@ViewData.ModelMetadata.PropertyName" class="form-control input-sm" type="text" readonly value="@ViewData.ModelMetadata.Model"  data-convertlocaltime>
+}
+else
+{
+    <input name="@ViewData.ModelMetadata.PropertyName" class="form-control input-sm" type="text" readonly value="@ViewData.ModelMetadata.Model">
+}
+
+
+<input id="@ViewData.ModelMetadata.PropertyName" type="hidden" name="@ViewData.ModelMetadata.PropertyName"  />

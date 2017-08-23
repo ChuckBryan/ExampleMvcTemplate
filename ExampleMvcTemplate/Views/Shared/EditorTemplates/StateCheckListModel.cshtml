@@ -1,0 +1,9 @@
+﻿@model ExampleMvcTemplate.Models.StateCheckListModel
+
+<label style="font-weight: normal" class="col-md-6">
+    @Html.CheckBox("IsSelected", Model.IsSelected && Model.IsSelected) @Model.StateName
+</label>
+
+
+@Html.HiddenFor(m => m.State)
+@Html.HiddenFor(m => m.StateName)

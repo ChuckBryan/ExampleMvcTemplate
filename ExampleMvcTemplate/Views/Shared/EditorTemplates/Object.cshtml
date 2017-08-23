@@ -1,0 +1,42 @@
+﻿@using ExampleMvcTemplate.Models.Helpers
+@model dynamic
+
+@foreach (ModelMetadata prop in ViewData.ModelMetadata.Properties
+                .Where(p => p.ShowForEdit))
+{
+    if (prop.TemplateHint == "HiddenInput")
+    {
+        @Html.Hidden(prop.PropertyName)
+        continue;
+    }
+    // If the DataTypeName is overridden (e.g. Yes No), don't use this
+    if (prop.DataTypeName == null && prop.ModelType == typeof(bool))
+    {
+        <div class="form-group">
+            <div class="col-md-9 col-md-offset-3">
+                @Html.Editor(prop.PropertyName)
+                @if (prop.AdditionalValues.ContainsKey("_HELP"))
+                {
+                    <p class="help-block">@prop.AdditionalValues["_HELP"]</p>
+                }
+            </div>
+        </div>
+        continue;
+    }
+    <div class="form-group">
+        @Html.BootstrapLabel(prop.PropertyName, 3)
+        <div class="col-md-9">
+
+            @Html.Editor(prop.PropertyName)
+
+            @if (prop.AdditionalValues.ContainsKey("_HELP"))
+            {
+                <p class="help-block">@prop.AdditionalValues["_HELP"]</p>
+            }
+
+            <div>
+                @Html.ValidationMessage(prop.PropertyName, new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+}

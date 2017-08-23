@@ -1,0 +1,18 @@
+﻿@model Boolean?
+
+<div class="form-group">
+    @ViewData.ModelMetadata.DisplayName
+
+    <div class="radio-inline">
+        <label style="font-weight: normal">
+            @Html.RadioButton("", true, Model.HasValue && Model.Value, new { id = @ViewData.ModelMetadata.PropertyName + "_Yes" }) Yes
+        </label>
+    </div>
+    <div class="radio-inline">
+        <label style="font-weight: normal">
+            @Html.RadioButton("", false, Model.HasValue && Model.Value == false, new { id = @ViewData.ModelMetadata.PropertyName + "_No" }) No
+        </label>
+    </div>
+    <div></div>
+
+</div>

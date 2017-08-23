@@ -1,0 +1,28 @@
+﻿<div class="page-header">
+    <h1>Editor Example</h1>
+</div>
+
+@using (Html.BeginForm("SaveDisposition", "Editor", FormMethod.Post, new {@class = "form-horizontal"}))
+{
+    @Html.Action("GetDisposition", new {id = 1})
+}
+
+@using (Html.BeginForm("SaveDisposition2", "Editor", FormMethod.Post, new {@class = "form-horizontal"}))
+{
+    @Html.Action("GetDisposition", new {id = 2})
+}
+
+
+
+@using (Html.BeginForm("SaveStates", "Editor", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    @Html.Action("GetStateCheckList", new { id = 2 })
+}
+
+
+
+
+@section scripts
+{
+    @Html.Partial("ValidationScriptPartial")
+}

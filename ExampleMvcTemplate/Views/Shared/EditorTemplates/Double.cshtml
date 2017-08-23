@@ -1,0 +1,4 @@
+﻿@model Double?
+
+@Html.TextBox("", Model.HasValue ? ViewData.TemplateInfo.FormattedModelValue : "",
+                new { @class = "form-control input-sm", placeholder = ViewData.ModelMetadata.Watermark, type = "number" })
