@@ -2,6 +2,7 @@
 {
     using System.ComponentModel.DataAnnotations;
     using System.Web.Mvc;
+    using Infrastructure.ModelMetadata;
 
     public class DispositionModel
     {
@@ -14,6 +15,8 @@
 
         [Required]
         [DataType(DataType.MultilineText)]
+        [Help("Example of a Help Message")]
+        [Watermark(PlaceHolder = "Enter your Disposition Note")]
         public string Note { get; set; }
 
         [Display(Name="Is This Private?")]

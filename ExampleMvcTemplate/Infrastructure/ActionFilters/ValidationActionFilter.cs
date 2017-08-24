@@ -1,4 +1,4 @@
-﻿namespace ExampleMvcTemplate.ActionFilters
+﻿namespace ExampleMvcTemplate.Infrastructure.ActionFilters
 {
     using System.Net;
     using System.Web.Mvc;

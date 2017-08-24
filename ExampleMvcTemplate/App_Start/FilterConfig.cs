@@ -3,7 +3,7 @@ using System.Web.Mvc;
 
 namespace ExampleMvcTemplate
 {
-    using ActionFilters;
+    using Infrastructure.ActionFilters;
 
     public class FilterConfig
     {

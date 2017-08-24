@@ -139,8 +139,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActionFilters\ValidationActionFilter.cs" />
-    <Compile Include="ActionResults\StandardJsonResult.cs" />
+    <Compile Include="Infrastructure\ActionFilters\ValidationActionFilter.cs" />
+    <Compile Include="Infrastructure\ActionResults\StandardJsonResult.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -150,6 +150,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\ModelMetadata\ExtensibleModelMetadataProvider.cs" />
+    <Compile Include="Infrastructure\ModelMetadata\Filters\WatermarkConvention.cs" />
+    <Compile Include="Infrastructure\ModelMetadata\HelpAttribute.cs" />
+    <Compile Include="Infrastructure\ModelMetadata\IModelMetadataFilter.cs" />
+    <Compile Include="Infrastructure\ModelMetadata\WatermarkAttribute.cs" />
     <Compile Include="Models\DropDownItem.cs" />
     <Compile Include="Models\Helpers\HtmlHelperExtensions.cs" />
     <Compile Include="Models\Home\DispositionModel.cs" />

@@ -1,4 +1,4 @@
-﻿namespace ExampleMvcTemplate.ActionResults
+﻿namespace ExampleMvcTemplate.Infrastructure.ActionResults
 {
     using System;
     using System.Collections.Generic;
